@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import main.com.example.promotion.PromotionEngine;
 
-class PromotionEngineTest {
+class PromotionEngineTestScenarioA {
 
 	@Test
 	void testExecuteCheckout() {
