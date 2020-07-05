@@ -8,6 +8,8 @@ public class CheckoutCart {
 		
 		var wrapper = new Object(){ int total = 0; };
 		try {
+			List<String> checkedout = new ArrayList<String>();
+			List<Boolean> checked = new ArrayList<Boolean>();
 			ci.items.forEach((k,v) -> {
 				String id = k;
 				int value = v;
@@ -35,7 +37,12 @@ public class CheckoutCart {
 							}							
 						});
 						if(wrapper1.contain) {
-							
+							promo.promos.get(present).forEach((k1, v1) ->{
+								if(!checkedout.contains(k1)) {
+									checkedout.add(k1);
+									checked.add(false);
+								}
+							});
 						}
 						else {
 							promo.promos.get(present).forEach((k1, v1) ->{
