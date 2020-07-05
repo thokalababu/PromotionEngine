@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * New Promotions can be applied in this class by adding 
+ * promotions into the HashMap
+*/
+
 public class Promotions {
 
 	List<Map<String,Integer>> promos;

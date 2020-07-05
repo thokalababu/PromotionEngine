@@ -1,5 +1,11 @@
 package com.example.promotion;
 
+/*
+ * New item's and prices can be added in this class
+ * If a new item is added, the corresponding set and get methods need to be added.
+ * And getPrice method is to be updated.
+ */
+
 public class Item {
 
 int priceOfA, priceOfB, priceOfC, priceOfD;
