@@ -34,6 +34,17 @@ public class CheckoutCart {
 								wrapper1.contain = false;								
 							}							
 						});
+						if(wrapper1.contain) {
+							
+						}
+						else {
+							promo.promos.get(present).forEach((k1, v1) ->{
+								if(ci.items.containsKey(k1) && promo.promos.get(present).containsKey(k)){
+									int cost = v*item.getPrice(k1);
+									wrapper.total += cost;
+								}
+							});
+						}	
 							
 					}
 					else {
