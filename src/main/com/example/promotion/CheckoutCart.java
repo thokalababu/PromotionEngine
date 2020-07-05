@@ -1,4 +1,4 @@
-package com.example.promotion;
+package main.com.example.promotion;
 
 import java.util.ArrayList;
 import java.util.List;

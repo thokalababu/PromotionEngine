@@ -1,4 +1,4 @@
-package com.example.promotion;
+package main.com.example.promotion;
 
 /*
  * New item's and prices can be added in this class
