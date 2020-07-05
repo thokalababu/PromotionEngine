@@ -5,7 +5,8 @@ import java.util.List;
 
 public class CheckoutCart {
 	public int checkout(Item item, CartItems ci, Promotions promo) {
-		int total = 0;
+		
+		var wrapper = new Object(){ int total = 0; };
 		try {
 			ci.items.forEach((k,v) -> {
 				String id = k;
@@ -26,8 +27,8 @@ public class CheckoutCart {
 							}
 							else {
 								tempTotal = item.getPrice(k)*value;
-								System.out.println(tempTotal);
 							}
+							wrapper.total += tempTotal;
 						}
 					}
 				}
@@ -35,8 +36,9 @@ public class CheckoutCart {
 		}
 		catch(Exception e) {
 			System.out.print(e.toString());
+			System.exit(0);
 		}
-		return total;
+		return wrapper.total;
 	}
 
 }
