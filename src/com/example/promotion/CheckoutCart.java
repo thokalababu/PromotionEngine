@@ -23,7 +23,7 @@ public class CheckoutCart {
 							int promoSelectedItems = promo.promos.get(present).get(k);
 							int promoAppliedItem = value/promoSelectedItems;
 							if(promoAppliedItem>0) {
-								
+								tempTotal = (promoAppliedItem*promo.cost.get(present))+((value-(promoAppliedItem*promoSelectedItems))*item.getPrice(k));
 							}
 							else {
 								tempTotal = item.getPrice(k)*value;
