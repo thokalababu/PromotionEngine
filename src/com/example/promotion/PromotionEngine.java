@@ -19,6 +19,8 @@ public class PromotionEngine {
 				CartItems ci = new CartItems();
 				ci.setCartItems(total_items);
 				Promotions promo = new Promotions();
+				CheckoutCart cart = new CheckoutCart();
+				total = cart.checkout(item,ci,promo);	
 			}
 			in.close();
 			return total;			
