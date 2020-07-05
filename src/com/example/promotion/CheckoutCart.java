@@ -43,6 +43,38 @@ public class CheckoutCart {
 									checked.add(false);
 								}
 							});
+							promo.promos.get(present).forEach((k1, v1) ->{
+								List<String> temp = new ArrayList<String>();
+								for(int j=0;j<checkedout.size();j++) {
+									if(!checked.get(j)) {
+										temp.add(checkedout.get(j));
+										checked.set(j, true);
+									}
+								}
+								if(!temp.isEmpty()) {
+									var wrapper3 = new Object(){ int min=-1; };
+									for(int j=0;j<temp.size();j++) {
+										String s = temp.get(j);
+										promo.promos.get(present).forEach((k2,v2) -> {
+											if(k2.equals(s)) {
+												if((wrapper3.min>ci.items.get(s)/v2) || wrapper3.min<0) {
+													wrapper3.min = ci.items.get(s)/v2;
+												}
+											}
+										});
+									}
+									int cost = promo.cost.get(present)*wrapper3.min;
+									for(int j=0;j<temp.size();j++) {
+										int v2 = ci.items.get(temp.get(j));
+										int d = v2-(wrapper3.min*(ci.items.get(id)/v2));
+										if(d >=0) {
+											System.out.println(d+"   "+temp.get(j));
+											cost += d*item.getPrice(temp.get(j));
+										}
+									}
+									wrapper.total += cost;
+								}
+							});
 						}
 						else {
 							promo.promos.get(present).forEach((k1, v1) ->{
